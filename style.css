@@ -1,0 +1,89 @@
+body{
+    margin: 0px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(245, 245, 245);
+}
+
+#interior {
+    max-width: 1200px;
+    min-height: 800px;
+    margin: 0px auto;
+
+    /* flexbox */
+}
+
+/* ETCH-A-SKETCH */
+
+#etchSketchBody {
+    height: 720px;
+    width: 900px;
+    margin-top: 40px;
+
+    border-radius: 1px;
+    border: 3px solid rgb(185, 45, 75);
+    background-color: rgb(255, 150, 150);
+
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#etchHeader {
+    height: 80px;
+    width: 480px;
+
+    /* flexbox */
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#etchSketchScreen {
+    height: 450px;
+    width: 650px;
+
+    border-radius: 1px;
+    border: 2px solid rgb(185, 45, 75);
+    background-color: rgb(245, 245, 245);
+}
+
+#etchButtons {
+    height: 80px;
+    width: 600px;
+    
+    /* flex box */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#title {
+    font-size: 24px;
+}
+
+/* classes */
+
+.flexBox {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    color: rgb(185, 45, 75);
+}
+
+.button {
+    height: 48px;
+    width: 140px;
+
+    border-radius: 1px;
+    background: rgb(255, 150, 150);
+    border: 2px solid rgb(185, 45, 75);
+}
+
+.button:hover {
+    background: rgb(185, 45, 75);
+    color: rgb(255, 150, 150);
+}

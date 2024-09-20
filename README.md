@@ -13,4 +13,4 @@ TBA DESCRIPTION
 
 ## Lessons Learned:
 
-TBA DESCRIPTION
+The first headache I encountered was figuring out how to position a div within another div. Using margin affected the position of every div on my page, not just the child div I wanted it to affect. I eventually figured out that I had to use "position: relative;" on the parent div and "position: absolute;" on the child div.
