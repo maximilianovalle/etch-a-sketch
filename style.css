@@ -45,7 +45,7 @@ body{
     width: 650px;
 
     border-radius: 1px;
-    border: 2px solid rgb(185, 45, 75);
+    border: 1px solid rgb(185, 45, 75);
     background-color: rgb(245, 245, 245);
 }
 
@@ -86,4 +86,12 @@ body{
 .button:hover {
     background: rgb(185, 45, 75);
     color: rgb(255, 150, 150);
+}
+
+.row {
+    width: 100%;
+
+    box-sizing: border-box;
+    border: 1px solid black;
+    background-color: blue;
 }
