@@ -9,6 +9,8 @@ function setNewDivHeightWidth(userInput) {
     divHeightWidth = userInput;
 }
 
+// grid functions
+
 
 function createGrid() { // when page first loads
     const divContainer = getContainer();    // #etchSketchScreen
@@ -30,8 +32,6 @@ function createGrid() { // when page first loads
     }
 
 }
-
-// WIP: function to prompt user for new grid size
 
 function getContainer() {
     return document.querySelector("#etchSketchScreen");
@@ -55,3 +55,22 @@ function createDivColumn() {
     column.style.width = divPercentage + "%";
     return column;
 }
+
+// button functions + code
+
+function showTestAlert() {
+    alert("testing");
+}
+
+function getButton(buttonID) {
+    return document.querySelector("#" + buttonID);
+}
+
+const gridButton = getButton("gridButt");
+gridButton.addEventListener("click", showTestAlert);
+
+const rainbowButton = getButton("rainbowButt");
+rainbowButton.addEventListener("click", showTestAlert);
+
+const resetButt = getButton("resetButt");
+resetButt.addEventListener("click", showTestAlert);
