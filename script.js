@@ -9,18 +9,26 @@ function setNewDivHeightWidth(userInput) {
     divHeightWidth = userInput;
 }
 
+
 function createGrid() { // when page first loads
     const divContainer = getContainer();    // #etchSketchScreen
 
     for (let row = 0; row < divHeightWidth; row++) {
-
         let divRow = createDivRow();
-
-        // WIP: for (let column = 0; column < divHeightWidth; column++)
-        // WIP: create column inside row
-
         divContainer.appendChild(divRow);
     }
+
+    const divRowContainers = getRowContainer();
+
+    for (let i = 0; i < divHeightWidth; i++) {
+        const currRow = divRowContainers[i];
+
+        for (let column = 0; column < divHeightWidth; column++) {
+            let divColumn = createDivColumn();
+            currRow.appendChild(divColumn);
+        }
+    }
+
 }
 
 // WIP: function to prompt user for new grid size
@@ -29,9 +37,21 @@ function getContainer() {
     return document.querySelector("#etchSketchScreen");
 }
 
+function getRowContainer() {
+    return document.querySelectorAll(".row");
+}
+
 function createDivRow() {
     let row = document.createElement("div");
     row.classList.add("row");
+    row.classList.add("flexBox");
     row.style.height = divPercentage + "%";
     return row;
+}
+
+function createDivColumn() {
+    let column = document.createElement("div");
+    column.classList.add("column");
+    column.style.width = divPercentage + "%";
+    return column;
 }
