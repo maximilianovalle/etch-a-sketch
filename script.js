@@ -9,9 +9,19 @@ function setNewDivPercentage() {
     divPercentage = 100/divHeightWidth;
 }
 
+let columnList;
+let rainbowPenOn = 0;
+
+// onload calls -----
+
+function callOnLoadFunctions() {
+    createGrid();
+    setBlackPen();
+}
+
 // grid functions -----
 
-function createGrid() { // automatically called when page first loads
+function createGrid() {
     const divContainer = getContainer();    // #etchSketchScreen
 
     for (let row = 0; row < divHeightWidth; row++) {
@@ -46,7 +56,6 @@ function clearGrid() {
     }
 }
 
-
 function getContainer() {
     return document.querySelector("#etchSketchScreen");
 }
@@ -74,8 +83,41 @@ function createDivColumn() {
     return column;
 }
 
-// WIP -- figure out black pen coloring on column divs when onmouseover?? onmousedown???
+// pen colors
 
+function setBlackPen() {
+    columnList = getColumnContainer();
+    
+    for (let i = 0; i < columnList.length; i++) {
+        let currColumn = columnList[i];
+        currColumn.addEventListener("mouseover", () => {
+            currColumn.classList.remove("rainbowPen");
+            currColumn.classList.add("blackPen");
+        });
+    }
+}
+
+function setRainbowPen() {  // WIP!! -- figure out rainbow
+    columnList = getColumnContainer();
+
+    for (let i = 0; i < columnList.length; i++) {
+        let currColumn = columnList[i];
+
+        // let randNum1 = Math.round(Math.random() * 255);
+        // alert(rand1);
+
+        // let randNum2 = Math.round(Math.random() * 255);
+        // alert(rand2);
+
+        // let randNum3 = Math.round(Math.random() * 255);
+        // alert(rand3);
+        
+        currColumn.addEventListener("mouseover", () => {
+            currColumn.classList.remove("blackPen");
+            currColumn.classList.add("rainbowPen");
+        });
+    }
+}
 
 // button functions + code -----
 
@@ -87,14 +129,15 @@ function getButton(buttonID) {
 const gridButton = getButton("gridButt");
 gridButton.addEventListener("click", promptGridButton);
 
-function promptGridButton() {
-    let newInput = prompt("What grid size would you like? Insert num from 1-80!");  // WIP -- REFINE POPUP
+function promptGridButton() {     // WIP -- REFINE POPUP "MODAL BOX"
+    let newInput = prompt("What grid size would you like? Insert num from 1-80!");
 
     if (newInput > 0 && newInput < 81) {
         setNewDivHeightWidth(newInput);
         setNewDivPercentage();
         clearGrid();
         createGrid();
+        setBlackPen();
         return;
     }
 
@@ -110,21 +153,32 @@ function promptGridButton() {
 const rainbowButton = getButton("rainbowButt");
 rainbowButton.addEventListener("click", promptRainbowButton);
 
-function promptRainbowButton() { // WIP
-    // figure out regular black pen color function first
+function promptRainbowButton() {
+    alert("rainbowpen: " + rainbowPenOn);
+
+    if (rainbowPenOn == 1) {
+        setBlackPen();
+        rainbowPenOn = 0;
+    }
+
+    else if (rainbowPenOn == 0) {
+        setRainbowPen();
+        rainbowPenOn = 1;
+    }
 }
 
 
 const clearButton = getButton("clearButt");
 clearButton.addEventListener("click", promptClearButton);
 
-function promptClearButton() {
-    let resetCanvas = prompt("Are you sure you want to clear? Insert 'Yes' or 'No'");    // WIP -- REFINE POPUP
+function promptClearButton() {    // WIP -- REFINE POPUP "MODAL BOX"
+    let resetCanvas = prompt("Are you sure you want to clear? Insert 'Yes' or 'No'");
 
     if (resetCanvas == "Yes" || resetCanvas == "yes" || resetCanvas == "y" || resetCanvas == "Y") {
         alert("canvas reset.");
         clearGrid();
         createGrid();
+        setBlackPen();
         return;
     }
 

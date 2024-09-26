@@ -105,3 +105,11 @@ body{
 
     background-color: rgb(245, 245, 245);
 }
+
+.blackPen {
+    background: rgb(185, 45, 75);
+}
+
+.rainbowPen {
+    background: rgb(255, 150, 150);
+}
