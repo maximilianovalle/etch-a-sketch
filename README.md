@@ -1,7 +1,7 @@
 # etch-a-sketch
 Etch-a-sketch grid for pixel drawings!
 
-**Link to Project:** TBA!!
+**Link to Project:** (https://maximilianovalle.github.io/etch-a-sketch/)
 
 ![](demo.gif) TBA!!
 
