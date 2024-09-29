@@ -2,7 +2,7 @@ body{
     margin: 0px;
 
     font-family: Arial, Helvetica, sans-serif;
-    background: rgb(245, 245, 245);
+    background: rgb(87, 19, 34);
 }
 
 #interior {
@@ -24,6 +24,7 @@ body{
     border-radius: 1px;
     border: 3px solid rgb(185, 45, 75);
     background-color: rgb(255, 150, 150);
+    box-shadow: 0px 0px 10px rgb(185, 45, 75);
 
     /* flexbox */
     display: flex;
