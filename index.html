@@ -12,14 +12,14 @@
 
 </head>
 
-<body onload="callOnLoadFunctions()">    <!-- creates initial 16 x 16 grid when page loads -->
-    <!-- popup w/ title and start button when website is first loaded? -->
+<body onload="callOnLoadFunctions()">    <!-- creates initial 16 x 16 grid and sets pen when page loads -->
 
     <div id="interior" class="flexBox">
 
+        
+        <!-- etch a sketch -->
 
         <div id="etchSketchBody">
-
 
             <div id="etchHeader" class="flexBox">
 
@@ -37,7 +37,23 @@
 
             </div>
 
+        </div>
 
+
+        <!-- modal + boxes -->
+
+        <div id="modal" class="modal">
+
+            <div id="sizeModal" class="modalContent">
+                <span class="close">&times;</span>
+                <p>What grid size would you like? Insert num from 1-80!</p>
+            </div>
+
+            <div id="clearModal" class="modalContent">
+                <span class="close">&times;</span>
+                <p>Are you sure you want to clear your canvas? All art will be erased!</p>
+            </div>
+                
         </div>
 
 

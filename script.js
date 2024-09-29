@@ -12,14 +12,16 @@ function setNewDivPercentage() {
 let columnList;
 let rainbowPenOn = 0;
 
-// onload calls -----
+
+// ONLOAD CALLS -----
 
 function callOnLoadFunctions() {
     createGrid();
     setBlackPen();
 }
 
-// grid functions -----
+
+// GRID FUNCTIONS -----
 
 function createGrid() {
     const divContainer = getContainer();    // #etchSketchScreen
@@ -83,7 +85,8 @@ function createDivColumn() {
     return column;
 }
 
-// pen colors
+
+// PEN COLORS -----
 
 function setBlackPen() {
     columnList = getColumnContainer();
@@ -113,7 +116,8 @@ function setRainbowPen() {  // WIP!! -- figure out rainbow,, fix rainbowpen when
     }
 }
 
-// button functions + code -----
+
+// BUTTON FUNCTIONS + CODE -----
 
 function getButton(buttonID) {
     return document.querySelector("#" + buttonID);
@@ -185,3 +189,15 @@ function promptClearButton() {    // WIP -- REFINE POPUP "MODAL BOX"
 
     alert("Invalid input. Try again...");
 }
+
+
+// MODAL BOXES -----
+
+function getModal(modalID) {
+    return document.querySelector("#" + modalID);
+}
+
+// WIP: modal boxes.. little confusing, take it step by step. "modal" is the black background that blurs the main page ("web page element that displays in front of and deactivates all other page content"). the boxes appear over this modal.
+
+// -- we are using established clearButton and gridButton
+
