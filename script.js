@@ -91,30 +91,24 @@ function setBlackPen() {
     for (let i = 0; i < columnList.length; i++) {
         let currColumn = columnList[i];
         currColumn.addEventListener("mouseover", () => {
-            currColumn.classList.remove("rainbowPen");
-            currColumn.classList.add("blackPen");
+            currColumn.style.background = "rgb(185, 45, 75)";
         });
     }
 }
 
-function setRainbowPen() {  // WIP!! -- figure out rainbow
+
+function getRandomNumber() {
+    return Math.round(Math.random() * 255);
+}
+
+function setRainbowPen() {  // WIP!! -- figure out rainbow,, fix rainbowpen when clearing canvas or changing size
     columnList = getColumnContainer();
 
     for (let i = 0; i < columnList.length; i++) {
         let currColumn = columnList[i];
-
-        // let randNum1 = Math.round(Math.random() * 255);
-        // alert(rand1);
-
-        // let randNum2 = Math.round(Math.random() * 255);
-        // alert(rand2);
-
-        // let randNum3 = Math.round(Math.random() * 255);
-        // alert(rand3);
         
         currColumn.addEventListener("mouseover", () => {
-            currColumn.classList.remove("blackPen");
-            currColumn.classList.add("rainbowPen");
+            currColumn.style.background = "rgb(" + getRandomNumber() + ", " + getRandomNumber() + ", " + getRandomNumber() + ")";
         });
     }
 }
@@ -137,7 +131,8 @@ function promptGridButton() {     // WIP -- REFINE POPUP "MODAL BOX"
         setNewDivPercentage();
         clearGrid();
         createGrid();
-        setBlackPen();
+        if (rainbowPenOn == 1) { setRainbowPen(); }
+        else { setBlackPen(); }
         return;
     }
 
@@ -154,17 +149,17 @@ const rainbowButton = getButton("rainbowButt");
 rainbowButton.addEventListener("click", promptRainbowButton);
 
 function promptRainbowButton() {
-    alert("rainbowpen: " + rainbowPenOn);
 
     if (rainbowPenOn == 1) {
         setBlackPen();
+        rainbowButton.innerHTML = "rainbow pen [OFF]";
         rainbowPenOn = 0;
+        return;
     }
 
-    else if (rainbowPenOn == 0) {
-        setRainbowPen();
-        rainbowPenOn = 1;
-    }
+    setRainbowPen();
+    rainbowButton.innerHTML = "rainbow pen [ON]";
+    rainbowPenOn = 1;
 }
 
 
@@ -178,7 +173,8 @@ function promptClearButton() {    // WIP -- REFINE POPUP "MODAL BOX"
         alert("canvas reset.");
         clearGrid();
         createGrid();
-        setBlackPen();
+        if (rainbowPenOn == 1) { setRainbowPen(); }
+        else { setBlackPen(); }
         return;
     }
 
