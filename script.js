@@ -111,7 +111,7 @@ function setRainbowPen() {  // WIP!! -- figure out rainbow,, fix rainbowpen when
         let currColumn = columnList[i];
         
         currColumn.addEventListener("mouseover", () => {
-            currColumn.style.background = "rgb(" + getRandomNumber() + ", " + getRandomNumber() + ", " + getRandomNumber() + ")";
+            currColumn.style.background = "rgb(255" + ", " + getRandomNumber() + ", " + getRandomNumber() + ")";
         });
     }
 }
