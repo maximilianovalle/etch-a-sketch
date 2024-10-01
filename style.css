@@ -68,48 +68,56 @@ body{
 
 /* MODAL BOXES */
 
-.modal {    /* background */
+.modal {    /* black background */
+    width: 100%;    /* full width */
+    height: 100%;   /* full height */
+    padding-top: 200px; /* location of box */
+    left: 0;
+    top: 0;
+
     display: none;  /* hidden by default */
     position: fixed; /* stay in place */
     z-index: 1; /* sit on top */
-    padding-top: 100px; /* location of box */
-    left: 0;
-    top: 0;
-    width: 100%;    /* full width */
-    height: 100%;   /* full height */
     overflow: auto; /* enable scroll if needed */
+
     background-color: rgb(0, 0, 0); /* fallback color */
     background-color: rgba(0, 0, 0, 0.4);   /* black w opacity */
 }
 
 .modalContent { /* box */
-    background-color: red;
+    width: 35%;
     margin: auto;
     padding: 20px;
-    border: 2px solid darkred;
-    width: 80%;
+    padding-bottom: 28px;
+
+    font-weight: bold;
+
+    background-color: rgb(245, 245, 245);
+    color: rgb(185, 45, 75);
+    border: 2px solid rgb(185, 45, 75);
+}
+
+.flexBoxModal {
+    /* flexbox */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .close {
-    color: black;
     float: right;
+
     font-size: 28px;
     font-weight: bold;
+
+    color: rgb(185, 45, 75);
 }
 
 .close:hover, .close:focus {
-    color: blue;
+    color: rgb(255, 150, 150);
     text-decoration: none;
     cursor: pointer;
 }
-
-/* #sizeModal {
-
-}
-
-#clearModal {
-
-} */
 
 
 /* CLASSES */
@@ -131,6 +139,18 @@ body{
     border-radius: 1px;
     background: rgb(255, 150, 150);
     border: 2px solid rgb(185, 45, 75);
+}
+
+.input {
+    height: 48px;
+    width: 140px;
+
+    border-radius: 1px;
+    border: 2px solid rgb(185, 45, 75);
+}
+
+::placeholder {
+    color: rgba(185, 45, 75, 0.5);
 }
 
 .button:hover, .button:focus {

@@ -125,28 +125,28 @@ function getButton(buttonID) {
 
 
 const gridButton = getButton("gridButt");
-gridButton.addEventListener("click", promptGridButton);
+// gridButton.addEventListener("click", promptGridButton);
 
-function promptGridButton() {     // WIP -- REFINE POPUP "MODAL BOX"
-    let newInput = prompt("What grid size would you like? Insert num from 1-80!");
+// function promptGridButton() {     // WIP -- REFINE POPUP "MODAL BOX"
+//     let newInput = prompt("What grid size would you like? Insert num from 1-80!");
 
-    if (newInput > 0 && newInput < 81) {
-        setNewDivHeightWidth(newInput);
-        setNewDivPercentage();
-        clearGrid();
-        createGrid();
-        if (rainbowPenOn == 1) { setRainbowPen(); }
-        else { setBlackPen(); }
-        return;
-    }
+//     if (newInput > 0 && newInput < 81) {
+//         setNewDivHeightWidth(newInput);
+//         setNewDivPercentage();
+//         clearGrid();
+//         createGrid();
+//         if (rainbowPenOn == 1) { setRainbowPen(); }
+//         else { setBlackPen(); }
+//         return;
+//     }
 
-    else if (newInput < 1 || newInput > 80) {
-        alert("Number not within 1-80 range! Try again.");
-        return;
-    }
+//     else if (newInput < 1 || newInput > 80) {
+//         alert("Number not within 1-80 range! Try again.");
+//         return;
+//     }
 
-    alert("Invalid input! Try again...");
-}
+//     alert("Invalid input! Try again...");
+// }
 
 
 const rainbowButton = getButton("rainbowButt");
@@ -168,36 +168,63 @@ function promptRainbowButton() {
 
 
 const clearButton = getButton("clearButt");
-clearButton.addEventListener("click", promptClearButton);
+// clearButton.addEventListener("click", promptClearButton);
 
-function promptClearButton() {    // WIP -- REFINE POPUP "MODAL BOX"
-    let resetCanvas = prompt("Are you sure you want to clear? Insert 'Yes' or 'No'");
+// function promptClearButton() {    // WIP -- REFINE POPUP "MODAL BOX"
+//     let resetCanvas = prompt("Are you sure you want to clear? Insert 'Yes' or 'No'");
 
-    if (resetCanvas == "Yes" || resetCanvas == "yes" || resetCanvas == "y" || resetCanvas == "Y") {
-        alert("canvas reset.");
-        clearGrid();
-        createGrid();
-        if (rainbowPenOn == 1) { setRainbowPen(); }
-        else { setBlackPen(); }
-        return;
-    }
+//     if (resetCanvas == "Yes" || resetCanvas == "yes" || resetCanvas == "y" || resetCanvas == "Y") {
+//         alert("canvas reset.");
+//         clearGrid();
+//         createGrid();
+//         if (rainbowPenOn == 1) { setRainbowPen(); }
+//         else { setBlackPen(); }
+//         return;
+//     }
 
-    if (resetCanvas == "No" || resetCanvas == "no" || resetCanvas == "n" || resetCanvas == "N") {
-        alert("exited.");
-        return;
-    }
+//     if (resetCanvas == "No" || resetCanvas == "no" || resetCanvas == "n" || resetCanvas == "N") {
+//         alert("exited.");
+//         return;
+//     }
 
-    alert("Invalid input. Try again...");
-}
+//     alert("Invalid input. Try again...");
+// }
 
 
 // MODAL BOXES -----
 
-function getModal(modalID) {
-    return document.querySelector("#" + modalID);
-}
+const gridModal = getButton("gridModal");
+// clearButton
+const closeGridButton = getButton("gridX");
 
-// WIP: modal boxes.. little confusing, take it step by step. "modal" is the black background that blurs the main page ("web page element that displays in front of and deactivates all other page content"). the boxes appear over this modal.
+gridButton.addEventListener("click", () => {
+    gridModal.style.display = "block";
+});
 
-// -- we are using established clearButton and gridButton
+closeGridButton.addEventListener("click", () => {
+    gridModal.style.display = "none";
+});
 
+window.addEventListener("click", () => {
+    if (event.target == gridModal) {
+        gridModal.style.display = "none";
+    }
+})
+
+const clearModal = getButton("clearModal");
+// clearButton
+const closeClearButton = getButton("clearX");
+
+clearButton.addEventListener("click", () => {
+    clearModal.style.display = "block";
+});
+
+closeClearButton.addEventListener("click", () => {
+    clearModal.style.display = "none";
+});
+
+window.addEventListener("click", () => {
+    if (event.target == clearModal) {
+        clearModal.style.display = "none";
+    }
+})

@@ -42,16 +42,39 @@
 
         <!-- modal + boxes -->
 
-        <div id="modal" class="modal">
+        <div id="gridModal" class="modal">
 
-            <div id="sizeModal" class="modalContent">
-                <span class="close">&times;</span>
-                <p>What grid size would you like? Insert num from 1-80!</p>
+            <div class="modalContent">
+
+                <span id="gridX" class="close">&times;</span>
+
+                <div class="flexBox">
+                    <p>What grid size would you like? Insert num from 1-80!</p>
+                </div>
+
+                <div class="flexBoxModal">
+                    <input id="gridInput" class="input" type="text" placeholder="1 to 80">
+                </div>
+
             </div>
 
-            <div id="clearModal" class="modalContent">
-                <span class="close">&times;</span>
-                <p>Are you sure you want to clear your canvas? All art will be erased!</p>
+        </div>
+
+        <div id="clearModal" class="modal">
+
+            <div class="modalContent">
+
+                <span id="clearX" class="close">&times;</span>
+                
+                <div class="flexBox">
+                    <p>Are you sure you want to clear your canvas? All art will be erased!</p>
+                </div>
+
+                <div class="flexBoxModal">
+                    <button id="clearYes" class="button text">Yes, clear the canvas.</button>
+                    <button id="clearNo" class="button text">NO.</button>
+                </div>
+
             </div>
                 
         </div>
