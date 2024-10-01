@@ -211,9 +211,12 @@ window.addEventListener("click", () => {
     }
 })
 
+
 const clearModal = getButton("clearModal");
 // clearButton
 const closeClearButton = getButton("clearX");
+const yesButton = getButton("clearYes");
+const noButton = getButton("clearNo");
 
 clearButton.addEventListener("click", () => {
     clearModal.style.display = "block";
@@ -223,8 +226,20 @@ closeClearButton.addEventListener("click", () => {
     clearModal.style.display = "none";
 });
 
+noButton.addEventListener("click", () => {
+    clearModal.style.display = "none";
+})
+
 window.addEventListener("click", () => {
     if (event.target == clearModal) {
         clearModal.style.display = "none";
     }
+})
+
+yesButton.addEventListener("click", () => {
+        clearGrid();
+        createGrid();
+        if (rainbowPenOn == 1) { setRainbowPen(); }
+        else { setBlackPen(); }
+        clearModal.style.display = "none";
 })

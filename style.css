@@ -97,6 +97,10 @@ body{
     border: 2px solid rgb(185, 45, 75);
 }
 
+#clearYes, #clearNo {
+    background: rgb(245, 245, 245);
+}
+
 .flexBoxModal {
     /* flexbox */
     display: flex;
