@@ -20,4 +20,7 @@ Taking breaks is also incredibly important. There were many instances where I be
 There were also a few cool features I learned about:
 
 1. Using ":focus" on a selector in CSS allows you to change the cursor - this can be utilized to highlight the cursor hovering over a button, for example!
-2. 
+2. The "&times;" HTML value for a nice 'X' shape!
+3. Modal boxes... omg.
+
+This was my first time implementing modal boxes, they're somewhat simple and made the project look way cleaner than it did when I used alert() and prompt().

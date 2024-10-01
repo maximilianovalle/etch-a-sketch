@@ -117,12 +117,34 @@ function setRainbowPen() {  // WIP!! -- figure out rainbow,, fix rainbowpen when
 }
 
 
-// BUTTON FUNCTIONS + CODE -----
+// BUTTON W/OUT MODAL BOXES -----
 
 function getButton(buttonID) {
     return document.querySelector("#" + buttonID);
 }
 
+
+const rainbowButton = getButton("rainbowButt");
+rainbowButton.addEventListener("click", promptRainbowButton);
+
+function promptRainbowButton() {
+
+    if (rainbowPenOn == 1) {
+        setBlackPen();
+        rainbowButton.innerHTML = "rainbow pen [OFF]";
+        rainbowPenOn = 0;
+        return;
+    }
+
+    setRainbowPen();
+    rainbowButton.innerHTML = "rainbow pen [ON]";
+    rainbowPenOn = 1;
+}
+
+
+// BUTTONS W/ MODAL BOXES -----
+
+// !!! WIP -- figure out grid input box
 
 const gridButton = getButton("gridButt");
 // gridButton.addEventListener("click", promptGridButton);
@@ -148,53 +170,8 @@ const gridButton = getButton("gridButt");
 //     alert("Invalid input! Try again...");
 // }
 
-
-const rainbowButton = getButton("rainbowButt");
-rainbowButton.addEventListener("click", promptRainbowButton);
-
-function promptRainbowButton() {
-
-    if (rainbowPenOn == 1) {
-        setBlackPen();
-        rainbowButton.innerHTML = "rainbow pen [OFF]";
-        rainbowPenOn = 0;
-        return;
-    }
-
-    setRainbowPen();
-    rainbowButton.innerHTML = "rainbow pen [ON]";
-    rainbowPenOn = 1;
-}
-
-
-const clearButton = getButton("clearButt");
-// clearButton.addEventListener("click", promptClearButton);
-
-// function promptClearButton() {    // WIP -- REFINE POPUP "MODAL BOX"
-//     let resetCanvas = prompt("Are you sure you want to clear? Insert 'Yes' or 'No'");
-
-//     if (resetCanvas == "Yes" || resetCanvas == "yes" || resetCanvas == "y" || resetCanvas == "Y") {
-//         alert("canvas reset.");
-//         clearGrid();
-//         createGrid();
-//         if (rainbowPenOn == 1) { setRainbowPen(); }
-//         else { setBlackPen(); }
-//         return;
-//     }
-
-//     if (resetCanvas == "No" || resetCanvas == "no" || resetCanvas == "n" || resetCanvas == "N") {
-//         alert("exited.");
-//         return;
-//     }
-
-//     alert("Invalid input. Try again...");
-// }
-
-
-// MODAL BOXES -----
-
 const gridModal = getButton("gridModal");
-// clearButton
+const clearButton = getButton("clearButt");
 const closeGridButton = getButton("gridX");
 
 gridButton.addEventListener("click", () => {
@@ -213,7 +190,6 @@ window.addEventListener("click", () => {
 
 
 const clearModal = getButton("clearModal");
-// clearButton
 const closeClearButton = getButton("clearX");
 const yesButton = getButton("clearYes");
 const noButton = getButton("clearNo");
