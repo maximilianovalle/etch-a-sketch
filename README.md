@@ -9,7 +9,7 @@ Etch-a-sketch grid for pixel drawings!
 
 **Tech Used:** HTML, CSS, Javascript
 
-TBA DESCRIPTION
+I was given a rough outline of this project by the Odin Project, as well as some rules I had to abide by (for example, I had to spawn in the divs using JS rather than manually insertng them by using HTML). As this project was more difficult than any I've worked on previously, I started by planning the website's look and general function on a whiteboard. From there, I worked as I usually do - breaking things up into smaller, more manageable chunks and taking it step by step.
 
 ## Lessons Learned:
 
