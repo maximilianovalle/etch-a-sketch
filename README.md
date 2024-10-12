@@ -24,3 +24,5 @@ There were also a few cool features I learned about:
 3. Modal boxes... omg.
 
 This was my first time implementing modal boxes, they're somewhat simple and made the project look way cleaner than it did when I used alert() and prompt().
+
+It also took me an awfully long time to realize that a page will refresh when a form resets. I kept wondering why, upon submitting a new grid size, the grid would remain at 16 x 16. What was actually happening was that the new grid would be created, but then the page would refresh and the original 16 x 16 grid would take its place. This all happened faster than I could see so to my eyes, it looked like it was just staying the same. I ended up having to set the onsubmit value in the form element to return false to prevent the page from refreshing. This ended up working but it feels like a wonky solution, I'm sure there's a method with better practice that I'll figure out later.

@@ -117,7 +117,7 @@ function setRainbowPen() {  // WIP!! -- figure out rainbow,, fix rainbowpen when
 }
 
 
-// BUTTON W/OUT MODAL BOXES -----
+// RAINBOW PEN
 
 function getButton(buttonID) {
     return document.querySelector("#" + buttonID);
@@ -144,43 +144,40 @@ function promptRainbowButton() {
 
 // BUTTONS W/ MODAL BOXES -----
 
-// !!! WIP -- figure out grid input box
-
 const gridButton = getButton("gridButt");
-// gridButton.addEventListener("click", promptGridButton);
-
-// function promptGridButton() {     // WIP -- REFINE POPUP "MODAL BOX"
-//     let newInput = prompt("What grid size would you like? Insert num from 1-80!");
-
-//     if (newInput > 0 && newInput < 81) {
-//         setNewDivHeightWidth(newInput);
-//         setNewDivPercentage();
-//         clearGrid();
-//         createGrid();
-//         if (rainbowPenOn == 1) { setRainbowPen(); }
-//         else { setBlackPen(); }
-//         return;
-//     }
-
-//     else if (newInput < 1 || newInput > 80) {
-//         alert("Number not within 1-80 range! Try again.");
-//         return;
-//     }
-
-//     alert("Invalid input! Try again...");
-// }
-
 const gridModal = getButton("gridModal");
-const clearButton = getButton("clearButt");
+const gridSubmit = getButton("gridSubmit");
 const closeGridButton = getButton("gridX");
 
 gridButton.addEventListener("click", () => {
     gridModal.style.display = "block";
 });
 
-closeGridButton.addEventListener("click", () => {
+// WIP -- new grid size appears for a second then disapears back to 16 x 16?
+
+gridSubmit.addEventListener("click", () => {
+    let newInput = document.getElementById("gridInput").value;
+
+    if (newInput < 1) {
+        newInput = 1;
+    }
+
+    else if (newInput > 80) {
+        newInput = 80;
+    }
+
+    clearGrid();
+    setNewDivHeightWidth(newInput);
+    setNewDivPercentage();
+    createGrid();
+    if (rainbowPenOn == 1) { setRainbowPen(); }
+    else { setBlackPen(); }
     gridModal.style.display = "none";
 });
+
+// closeGridButton.addEventListener("click", () => {
+//     gridModal.style.display = "none";
+// });
 
 window.addEventListener("click", () => {
     if (event.target == gridModal) {
@@ -188,9 +185,10 @@ window.addEventListener("click", () => {
     }
 })
 
-
+const clearButton = getButton("clearButt");
 const clearModal = getButton("clearModal");
 const closeClearButton = getButton("clearX");
+
 const yesButton = getButton("clearYes");
 const noButton = getButton("clearNo");
 

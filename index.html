@@ -15,7 +15,6 @@
 <body onload="callOnLoadFunctions()">    <!-- creates initial 16 x 16 grid and sets pen when page loads -->
 
     <div id="interior" class="flexBox">
-
         
         <!-- etch a sketch -->
 
@@ -44,16 +43,19 @@
 
         <div id="gridModal" class="modal">
 
-            <div class="modalContent">
+            <div id="gridModalContent" class="modalContent">
 
-                <span id="gridX" class="close">&times;</span>
+                <span id="gridX" class="close">&#10005;</span>
 
                 <div class="flexBox">
                     <p>What grid size would you like? Insert num from 1-80!</p>
                 </div>
 
                 <div class="flexBoxModal">
-                    <input id="gridInput" class="input" type="text" placeholder="1 to 80">
+                    <form onsubmit="return false">
+                        <input id="gridInput" class="input" type="number" placeholder="1 to 80" min="1" max="80" required>
+                        <input id="gridSubmit" class="button text" type="submit" onclick="changeGrid()" value="submit">
+                    </form>
                 </div>
 
             </div>
@@ -64,7 +66,7 @@
 
             <div class="modalContent">
 
-                <span id="clearX" class="close">&times;</span>
+                <span id="clearX" class="close">&#10005;</span>
                 
                 <div class="flexBox">
                     <p>Are you sure you want to clear your canvas? All art will be erased!</p>
