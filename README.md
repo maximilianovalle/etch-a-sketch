@@ -3,7 +3,7 @@ Etch-a-sketch grid for pixel drawings!
 
 **Link to Project:** (https://maximilianovalle.github.io/etch-a-sketch/)
 
-![](demo.gif) TBA!!
+![](demo.gif)
 
 ## How It's Made
 
